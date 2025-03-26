@@ -4,7 +4,30 @@
     {
         static void Main(string[] args)
         {
-            int tamanhoDoDiamante = 5;
+            int tamanhoDoDiamante;
+            bool numeroEhValido = false;
+
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("---------------------------------------------");
+                Console.WriteLine("Diamante de X");
+                Console.WriteLine("---------------------------------------------");
+
+                Console.Write("Digite um número impar positivo: ");
+                numeroEhValido = int.TryParse(Console.ReadLine(), out tamanhoDoDiamante);
+
+                Console.WriteLine("---------------------------------------------");
+
+                if (tamanhoDoDiamante <= 1 || tamanhoDoDiamante > 99 || tamanhoDoDiamante % 2 == 0)
+                {
+                    numeroEhValido = false;
+                    Console.WriteLine("Por favor, digite um número impar maior que 1 e menor que 100!");
+                    Console.WriteLine("---------------------------------------------");
+
+                    Console.ReadLine();
+                }
+            } while (numeroEhValido == false);
 
             int quantidadeDeLinhas = (tamanhoDoDiamante - 1) / 2;
             int quantidadeDeEspacos = (tamanhoDoDiamante - 1) / 2;

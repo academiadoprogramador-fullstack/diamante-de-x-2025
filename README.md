@@ -21,12 +21,12 @@ diamante desenhado com a letra 'X'.
 
 #### Clone o Repositório
 ```
-git clone https://github.com/academiadoprogramador-fullstack/lista-de-exercicios-2025.git
+git clone https://github.com/academiadoprogramador-fullstack/diamante-de-x-2025.git
 ```
 
 #### Navegue até a pasta raiz da solução
 ```
-cd lista-de-exercicios-2025
+cd diamante-de-x-2025
 ```
 
 #### Restaure as dependências
@@ -36,7 +36,7 @@ dotnet restore
 
 #### Navegue até a pasta do projeto
 ```
-cd ListaDeExercicios.ConsoleApp
+cd DiamanteDeX.ConsoleApp
 ```
 
 #### Execute o projeto

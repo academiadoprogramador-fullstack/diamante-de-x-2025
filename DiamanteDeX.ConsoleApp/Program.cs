@@ -8,9 +8,7 @@ class Program
         {
             ExibirCabecalho();
 
-            int tamanhoDoDiamante = ObterTamanhoDoDiamante();
-
-            GeradorDeDiamante.Iniciar(tamanhoDoDiamante);
+            GeradorDeDiamante.Iniciar(ObterTamanhoDoDiamante());
 
             DesenharParteSuperior();
 

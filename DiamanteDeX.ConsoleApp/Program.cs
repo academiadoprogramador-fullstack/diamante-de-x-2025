@@ -12,39 +12,17 @@ class Program
 
             GeradorDeDiamante.Iniciar(tamanhoDoDiamante);
 
-            // Desenho da parte superior
-            for (int linha = 0; linha < GeradorDeDiamante.QuantidadeDeLinhas; linha++)
-            {
-                Console.Write(GeradorDeDiamante.ObterEspacosDaLinha());
-                Console.Write(GeradorDeDiamante.ObterXsDaLinha());
+            DesenharParteSuperior();
 
-                GeradorDeDiamante.IncrementarLinha();
+            DesenharParteDoMeio();
 
-                Console.WriteLine();
-            }
-
-            // Desenho da parte do meio
-            Console.Write(GeradorDeDiamante.ObterXsDaLinha());
-            Console.WriteLine();
-
-            // Desenho da parte inferior
-            GeradorDeDiamante.QuantidadeDeEspacos = 1;
-            GeradorDeDiamante.QuantidadeDeX -= 2;
-
-            for (int linha = 0; linha < GeradorDeDiamante.QuantidadeDeLinhas; linha++)
-            {
-                Console.Write(GeradorDeDiamante.ObterEspacosDaLinha());
-                Console.Write(GeradorDeDiamante.ObterXsDaLinha());
-
-                GeradorDeDiamante.DecrementarLinha();
-
-                Console.WriteLine();
-            }
+            DesenharParteInferior();
 
             if (UsuarioDesejaSair())
                 break;
         }
     }
+
     static void ExibirCabecalho()
     {
         Console.Clear();
@@ -77,6 +55,41 @@ class Program
         } while (numeroEhValido == false);
 
         return tamanhoDoDiamante;
+    }
+
+    static void DesenharParteInferior()
+    {
+        GeradorDeDiamante.QuantidadeDeEspacos = 1;
+        GeradorDeDiamante.QuantidadeDeX -= 2;
+
+        for (int linha = 0; linha < GeradorDeDiamante.QuantidadeDeLinhas; linha++)
+        {
+            Console.Write(GeradorDeDiamante.ObterEspacosDaLinha());
+            Console.Write(GeradorDeDiamante.ObterXsDaLinha());
+
+            GeradorDeDiamante.DecrementarLinha();
+
+            Console.WriteLine();
+        }
+    }
+
+    static void DesenharParteDoMeio()
+    {
+        Console.Write(GeradorDeDiamante.ObterXsDaLinha());
+        Console.WriteLine();
+    }
+
+    static void DesenharParteSuperior()
+    {
+        for (int linha = 0; linha < GeradorDeDiamante.QuantidadeDeLinhas; linha++)
+        {
+            Console.Write(GeradorDeDiamante.ObterEspacosDaLinha());
+            Console.Write(GeradorDeDiamante.ObterXsDaLinha());
+
+            GeradorDeDiamante.IncrementarLinha();
+
+            Console.WriteLine();
+        }
     }
 
     static bool UsuarioDesejaSair()
